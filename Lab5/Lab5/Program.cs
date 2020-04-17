@@ -7,14 +7,20 @@ namespace Lab5
     {
         static void Main(string[] args)
         {
-            var AirBug = new Air();
-            AirBug.Add(new Animals { Name = "Pushok", Cage = true });
-            AirBug.Add(new Sub { Type = "Skiing", Size = 10 });
-            Console.WriteLine("ReportA");
-            AirBug.Accept(new ReportA());
-            Console.WriteLine("ReportB");
-            AirBug.Accept(new ReportB());
-
+            try
+            {
+                var AirBug = new Air();
+                AirBug.Add(new Animals { Name = "Pushok", Cage = true });
+                AirBug.Add(new Sub { Type = "Skiing", Size = 10 });
+                Console.WriteLine("ReportA");
+                AirBug.Accept(new ReportA());
+                Console.WriteLine("ReportB");
+                AirBug.Accept(new ReportB());
+            }
+            catch
+            {
+                Console.WriteLine("Ошибка!");
+            }
             Console.ReadKey();
         }
     }
